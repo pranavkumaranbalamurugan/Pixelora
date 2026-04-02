@@ -82,8 +82,6 @@ if FIREBASE_SERVICE_ACCOUNT_JSON:
         firebase_db = None
         firebase_bucket = None
 
-sync_local_registrations_to_firestore()
-
 ALLOWED_YEARS = {"I-Year", "II-Year", "III-Year", "IV-Year"}
 ALLOWED_TECHNICAL_EVENTS = {"Innopitch", "Devfolio", "Promptcraft"}
 ALLOWED_NON_TECHNICAL_EVENTS = {
@@ -190,6 +188,11 @@ def save_registration_record(record: dict) -> None:
 
     if firebase_db is not None:
         firebase_db.collection("registrations").document(str(record["id"])).set(record)
+
+
+@app.on_event("startup")
+def sync_registrations_on_startup() -> None:
+    sync_local_registrations_to_firestore()
 
 
 def flatten_registration_for_csv(record: dict) -> dict:
