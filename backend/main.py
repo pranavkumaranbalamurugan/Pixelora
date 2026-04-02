@@ -54,22 +54,26 @@ firebase_db = None
 firebase_bucket = None
 
 if FIREBASE_SERVICE_ACCOUNT_JSON:
-    service_account_info = json.loads(FIREBASE_SERVICE_ACCOUNT_JSON)
-    firebase_options: dict[str, str] = {}
-    if FIREBASE_STORAGE_BUCKET:
-        firebase_options["storageBucket"] = FIREBASE_STORAGE_BUCKET
+    try:
+        service_account_info = json.loads(FIREBASE_SERVICE_ACCOUNT_JSON)
+        firebase_options: dict[str, str] = {}
+        if FIREBASE_STORAGE_BUCKET:
+            firebase_options["storageBucket"] = FIREBASE_STORAGE_BUCKET
 
-    if not firebase_admin._apps:
-        firebase_app = firebase_admin.initialize_app(
-            credentials.Certificate(service_account_info),
-            firebase_options if firebase_options else None,
-        )
-    else:
-        firebase_app = firebase_admin.get_app()
+        if not firebase_admin._apps:
+            firebase_app = firebase_admin.initialize_app(
+                credentials.Certificate(service_account_info),
+                firebase_options if firebase_options else None,
+            )
+        else:
+            firebase_app = firebase_admin.get_app()
 
-    firebase_db = firestore.client(app=firebase_app)
-    if FIREBASE_STORAGE_BUCKET:
-        firebase_bucket = storage.bucket(app=firebase_app)
+        firebase_db = firestore.client(app=firebase_app)
+        if FIREBASE_STORAGE_BUCKET:
+            firebase_bucket = storage.bucket(app=firebase_app)
+    except json.JSONDecodeError:
+        firebase_db = None
+        firebase_bucket = None
 
 ALLOWED_YEARS = {"I-Year", "II-Year", "III-Year", "IV-Year"}
 ALLOWED_TECHNICAL_EVENTS = {"Innopitch", "Devfolio", "Promptcraft"}
