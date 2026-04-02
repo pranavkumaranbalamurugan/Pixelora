@@ -55,22 +55,17 @@ Edit frontend/config.js:
 
 ## 4. Deploy Frontend to GitHub Pages
 
-Because this is a static site, deploy the frontend folder contents as your Pages site.
+Because this is a static site, deploy the repository root as your Pages site.
+The root `index.html` redirects visitors into `frontend/`, and `.nojekyll` prevents GitHub Pages from running Jekyll over the repo.
 
 Simple flow:
 
-1. Create a separate repository for frontend static files or use docs folder in same repo.
-2. Upload contents of PIXELORA/frontend:
-   - index.html
-   - styles.css
-   - app.js
-   - config.js
-   - images
-3. In GitHub repo settings -> Pages:
+1. In GitHub repo settings -> Pages:
    - Source: Deploy from a branch
    - Branch: main
-   - Folder: /(root) or /docs
-4. Save and wait for publishing.
+   - Folder: /(root)
+2. Save and wait for publishing.
+3. Open the published site; it will redirect to the frontend app under `frontend/`.
 
 Your frontend URL will be like:
 
@@ -86,7 +81,13 @@ Example:
 
 If you use a custom domain, include that domain too, comma-separated.
 
-## 6. Verify End-to-End
+## 6. Admin Portal
+
+- Open the hidden portal with `Ctrl+F7` on the frontend.
+- If you set `ADMIN_PORTAL_SECRET` in Render, the portal will send the secret in the `X-Admin-Secret` header.
+- The portal can list registrations and download a CSV export from the backend.
+
+## 7. Verify End-to-End
 
 1. Open backend health endpoint:
    - https://your-render-service.onrender.com/api/health
