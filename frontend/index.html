@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXELORA 2K26 | CSE Symposium</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="cursor-glow" id="cglow"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="bg-glow"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="brand"><h2>PIXELORA</h2><div class="loc">APEC, Melmaruvathur, Chengalpattu</div></div>
+  <ul>
+    <li><a href="#hero">Home</a></li><li><a href="#about">About</a></li>
+    <li><a href="#tech">Events</a></li><li><a href="#schedule">Schedule</a></li>
+    <li><a href="#register">Register</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mmenu" id="mm">
+  <a href="#hero" onclick="toggleMenu()">Home</a><a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#tech" onclick="toggleMenu()">Tech Events</a><a href="#nontech" onclick="toggleMenu()">Non-Tech</a>
+  <a href="#schedule" onclick="toggleMenu()">Schedule</a><a href="#register" onclick="toggleMenu()">Register</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <span class="hdept rv">Department of Computer Science Engineering</span>
+  <span class="htitle rv outfit">PIXELORA<br><span class="glow">2K26</span></span>
+  <span class="htag rv">A NEW BIRTH</span>
+  <span class="hsub rv">Experience the future of Computer Science Engineering through a harmonious blend of logic and creativity.</span>
+  <div class="ticker-box rv">
+    <div class="ti on"><span class="tl">Event Date</span><span class="tv">April 16, 2026</span></div>
+    <div class="ti"><span class="tl">Online Register</span><span class="tv">Rs. 150 / Head</span></div>
+    <div class="ti"><span class="tl">On-Spot Register</span><span class="tv">Rs. 200 / Head</span></div>
+    <div class="ti"><span class="tl">Rewards</span><span class="tv">Exciting Prizes</span></div>
+  </div>
+  <a href="#register" class="btn bm rv">Register Now</a>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="cds">
+  <p class="cdl rv">Online Registration Closes In</p>
+  <div class="cdw rv">
+    <div class="cdb"><div class="cdn" id="cd-d">00</div><div class="cdu">Days</div></div>
+    <div class="cdb"><div class="cdn" id="cd-h">00</div><div class="cdu">Hours</div></div>
+    <div class="cdb"><div class="cdn" id="cd-m">00</div><div class="cdu">Minutes</div></div>
+    <div class="cdb"><div class="cdn" id="cd-s">00</div><div class="cdu">Seconds</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="stitle rv">About Symposium</h2>
+  <p class="ssub rv">A Legacy of Innovation</p>
+  <div class="acard rv">
+    <p><strong>PIXELORA 2K26</strong> is a flagship symposium organized by the <strong>Department of Computer Science Engineering</strong>, bringing together innovation, creativity, and technical excellence.</p><br>
+    <p>Built on the vision of <strong>"A NEW BIRTH,"</strong> it provides a platform for students to explore, showcase, and innovate. Join us in redefining the boundaries of the digital world.</p>
+    <div style="margin-top:2.5rem; display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem">
+      <div class="rv" style="display:flex; align-items:center; gap:0.6rem; background:rgba(255,255,255,0.03); padding:0.8rem 1.4rem; border-radius:12px; border:1px solid var(--border)">
+        <i class="ph ph-cookie" style="color:var(--g1); font-size:1.4rem; filter:drop-shadow(0 0 8px var(--g1))"></i>
+        <span style="font-size:0.88rem; font-weight:600; opacity:0.8">Snacks &amp; Food Provided</span>
+      </div>
+      <div class="rv" style="display:flex; align-items:center; gap:0.6rem; background:rgba(255,255,255,0.03); padding:0.8rem 1.4rem; border-radius:12px; border:1px solid var(--border)">
+        <i class="ph ph-leaf" style="color:var(--g1); font-size:1.4rem; filter:drop-shadow(0 0 8px var(--g1))"></i>
+        <span style="font-size:0.88rem; font-weight:600; opacity:0.8">Veg &amp; Non-Veg</span>
+        <i class="ph ph-hamburger" style="color:var(--g1); font-size:1.4rem; filter:drop-shadow(0 0 8px var(--g1))"></i>
+      </div>
+      <div class="rv" style="display:flex; align-items:center; gap:0.6rem; background:rgba(255,255,255,0.03); padding:0.8rem 1.4rem; border-radius:12px; border:1px solid var(--border)">
+        <i class="ph ph-buildings" style="color:var(--g1); font-size:1.4rem; filter:drop-shadow(0 0 8px var(--g1))"></i>
+        <span style="font-size:0.88rem; font-weight:600; opacity:0.8">Venue: Main Block Auditorium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSTER SECTION -->
+<section id="poster" style="padding:clamp(60px,10vw,120px) 5%; min-height:auto; background:radial-gradient(circle at 50% 50%, rgba(0,255,136,0.08) 0%, #030303 75%)">
+  <div class="rv poster-container" style="width:100%; max-width:1000px; margin:0 auto">
+    <!-- Glow behind the poster -->
+    <div style="position:absolute; inset:20px; background:var(--grad); filter:blur(100px); opacity:0.15; z-index:-1"></div>
+    
+    <a href="PIXELORA .png" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none">
+      <img src="PIXELORA .png" alt="PIXELORA 2K26 Poster" style="width:100%; height:auto">
+    </a>
+  </div>
+</section>
+
+<!-- TECH EVENTS -->
+<section id="tech">
+  <h2 class="stitle rv">Technical Events</h2>
+  <p class="ssub rv">Push the Boundaries</p>
+  <div class="ev-grid">
+    <div class="ev-card rv d1">
+      <div class="ev-badge"><i class="ph ph-lightbulb"></i></div>
+      <i class="ev-wm ph ph-lightbulb"></i>
+      <h3>Innopitch</h3>
+      <span class="ev-tag">Pitch the impossible. Convince the inevitable.</span>
+      <p>Present innovative ideas solving real-world problems and compete for the best pitch.</p>
+      <ul class="ev-rules">
+        <li>Individual / Team (Max 3)</li>
+        <li>3-min pitch + 2-min Q&A</li>
+        <li>Original ideas only</li>
+        <li>Venue: Main Block Auditorium</li>
+        <li>Best 3 performers awarded</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+    <div class="ev-card rv d2">
+      <div class="ev-badge"><i class="ph ph-code"></i></div>
+      <i class="ev-wm ph ph-code"></i>
+      <h3>DevFolio</h3>
+      <span class="ev-tag">Don't say your skills. Show them.</span>
+      <p>Develop a portfolio (on-spot scenario) involving real-world coding challenges.</p>
+      <ul class="ev-rules">
+        <li>Individual participation</li>
+        <li>On-spot scenario dev</li>
+        <li>Must involve coding</li>
+        <li>Venue: CSE Main Lab</li>
+        <li>Best 3 performers awarded</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+    <div class="ev-card rv d3">
+      <div class="ev-badge"><i class="ph ph-cpu"></i></div>
+      <i class="ev-wm ph ph-cpu"></i>
+      <h3>PromptCraft</h3>
+      <span class="ev-tag">One prompt. Infinite imagination.</span>
+      <p>Create AI-generated visuals using a single, carefully crafted prompt.</p>
+      <ul class="ev-rules">
+        <li>Individual participation</li>
+        <li>2 rounds (20 mins each)</li>
+        <li>Single prompt generation</li>
+        <li>Venue: Multimedia Lab</li>
+        <li>Best 3 performers awarded</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NON-TECH -->
+<section id="nontech">
+  <h2 class="stitle rv">Non-Technical Events</h2>
+  <p class="ssub rv">Fun Meets Strategy</p>
+  <div class="ev-grid">
+    <div class="ev-card rv d1">
+      <div class="ev-badge"><i class="ph ph-game-controller"></i></div>
+      <i class="ev-wm ph ph-game-controller"></i>
+      <h3>E-Sports</h3>
+      <span class="ev-tag">Game hard. Dominate the battleground.</span>
+      <p>Compete in high-intensity multiplayer gaming matches where strategy, reflex, and teamwork decide the winner.</p>
+      <ul class="ev-rules">
+
+        <li>Custom lobby match</li>
+        <li>Fair play rules strictly followed</li>
+        <li>Top 2 teams win</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+    <div class="ev-card rv d2">
+      <div class="ev-badge"><i class="ph ph-television"></i></div>
+      <i class="ev-wm ph ph-television"></i>
+      <h3>Channel Surfing</h3>
+      <span class="ev-tag">Switch fast. Guess smart. Win quick.</span>
+      <p>A fun clue-based event where participants identify TV channels, shows, logos, or scenes in rapid rounds.</p>
+      <ul class="ev-rules">
+        <li>Solo / Team (2–3 members)</li>
+        <li>Rapid-fire visual rounds</li>
+        <li>Quick clue identification</li>
+        <li>Best 3 teams awarded</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+    <div class="ev-card rv d3">
+      <div class="ev-badge"><i class="ph ph-currency-inr"></i></div>
+      <i class="ev-wm ph ph-currency-inr"></i>
+      <h3>IPL Auction</h3>
+      <span class="ev-tag">Bid smart, build strong.</span>
+      <p class="slot-pill" id="ipl-slot-card">Slots Left: 10</p>
+      <ul class="ev-rules">
+        <li>Team (3–4) | Budget: 100C</li>
+        <li>Squad: 15 (11 Play + 4 Sub)</li>
+        <li>Overseas slots: 6 | Max 4 in 11</li>
+        <li>Bid smart, build your team</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+    <div class="ev-card rv d1">
+      <div class="ev-badge"><i class="ph ph-eye"></i></div>
+      <i class="ev-wm ph ph-eye"></i>
+      <h3>Visual Connect</h3>
+      <span class="ev-tag">Find the link. Crack the connection.</span>
+      <p>Find the common connection between given images or clues.</p>
+      <ul class="ev-rules">
+        <li>Identify the correct connection</li>
+        <li>Time limit for each question</li>
+        <li>No mobile phones allowed</li>
+        <li>Judge's decision is final</li>
+        <li>Solo / Team (2 members)</li>
+      </ul>
+      <a href="#register" class="ev-link">Register →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <h2 class="stitle rv">Event Schedule</h2>
+  <p class="ssub rv">16 April 2026</p>
+  <div class="tl2">
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">09:00 – 10:45</div><h3><i class="ph ph-microphone-stage" style="color:var(--g1);margin-right:8px"></i>Inauguration</h3><p>Opening ceremony and keynote</p></div></div>
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">10:45 – 11:00</div><h3><i class="ph ph-coffee" style="color:var(--g1);margin-right:8px"></i>Break</h3><p>Network and refresh</p></div></div>
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">11:00 – 12:30</div><h3><i class="ph ph-code" style="color:var(--g1);margin-right:8px"></i>Technical Events</h3><p>Innopitch, DevFolio, PromptCraft</p></div></div>
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">12:30 – 01:30</div><h3><i class="ph ph-bowl-food" style="color:var(--g1);margin-right:8px"></i>Lunch Break</h3><p>Recharge and connect (Veg & Non-Veg)</p></div></div>
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">01:30 – 03:00</div><h3><i class="ph ph-game-controller" style="color:var(--g1);margin-right:8px"></i>Non-Technical Events</h3><p>E-Sports, Channel Surfing, IPL Auction</p></div></div>
+    <div class="tl2-row"><div class="tl2-card"><div class="tl2-time">03:00 – 03:40</div><h3><i class="ph ph-trophy" style="color:var(--g1);margin-right:8px"></i>Valedictory</h3><p>Certificates and Prizes Distribution</p></div></div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+  <h2 class="stitle rv">Register Now</h2>
+  <p class="ssub rv">Claim Your Spot</p>
+  <div class="rcard rv" id="rcard">
+    <div style="text-align:left; margin-bottom:2rem; padding:1rem 1.1rem; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.03)">
+      <h3 style="margin:0 0 .8rem; font-size:1rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--g1)">Rules</h3>
+      <p style="margin:0; font-size:.92rem; font-weight:600; line-height:1.8; opacity:.92">*One Person Can Register Only For One Technical<br>*One Person Can Register Only For One Non-Technical<br>*All participants must report on time.<br>*On-Spot Register Rs-200 Per Head</p>
+    </div>
+    <h3>Secure your spot at PIXELORA 2K26. Slots are filling fast.</h3>
+    <form id="reg-form" class="reg-form" novalidate>
+      <div class="reg-grid">
+        <label class="reg-field">
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="reg-field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="reg-field">
+          <span>Whatsapp Number</span>
+          <input type="tel" name="whatsapp" autocomplete="tel" required>
+        </label>
+        <label class="reg-field">
+          <span>Year</span>
+          <select name="year" required>
+            <option value="">Select Year</option>
+            <option value="I-Year">I-Year</option>
+            <option value="II-Year">II-Year</option>
+            <option value="III-Year">III-Year</option>
+            <option value="IV-Year">IV-Year</option>
+          </select>
+        </label>
+        <label class="reg-field">
+          <span>College Name</span>
+          <input type="text" name="collegeName" required>
+        </label>
+        <label class="reg-field">
+          <span>Department Name</span>
+          <input type="text" name="departmentName" required>
+        </label>
+      </div>
+      <div class="reg-field">
+        <span>Technical Events</span>
+        <div class="reg-checklist">
+          <label class="reg-option"><input type="radio" name="technicalEvents" value="Innopitch" required onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>Innopitch</span></label>
+          <label class="reg-option"><input type="radio" name="technicalEvents" value="Devfolio" onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>Devfolio</span></label>
+          <label class="reg-option"><input type="radio" name="technicalEvents" value="Promptcraft" onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>Promptcraft</span></label>
+        </div>
+        <div id="technical-team-details" class="team-details empty" aria-live="polite"></div>
+      </div>
+      <div class="reg-field">
+        <span>Non-Technical Events</span>
+        <div class="reg-checklist">
+          <label class="reg-option"><input type="radio" name="nonTechnicalEvents" value="E-Sports (Free fire)" required onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>E-Sports (Free fire)</span></label>
+          <label class="reg-option" id="ipl-form-option"><input type="radio" name="nonTechnicalEvents" value="IPL Auction" onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>IPL Auction</span><em class="slot-inline" id="ipl-slot-form">(10 slots left)</em></label>
+          <label class="reg-option"><input type="radio" name="nonTechnicalEvents" value="Visual Connect" onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>Visual Connect</span></label>
+          <label class="reg-option"><input type="radio" name="nonTechnicalEvents" value="Channel Surfing" onchange="window.refreshTeamDetails && window.refreshTeamDetails()"><span>Channel Surfing</span></label>
+        </div>
+        <div id="nontechnical-team-details" class="team-details empty" aria-live="polite"></div>
+      </div>
+      <label class="reg-field">
+        <span>Food</span>
+        <select name="food" required>
+          <option value="">Select Food Preference</option>
+          <option value="Non-Veg">Non-Veg</option>
+          <option value="Veg">Veg</option>
+        </select>
+      </label>
+      <div class="reg-field" style="background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:12px; padding:1rem">
+        <span style="display:block; margin-bottom:0.5rem; font-weight:700">Payment Details</span>
+        <p style="margin:0.3rem 0; opacity:0.92">Payment per head - Rs.150</p>
+        <p style="margin:0.3rem 0 0.8rem; opacity:0.92">UPI ID - sachinvelu6925@okaxis</p>
+        <img src="Payment_QR.jpeg" alt="Payment QR" style="width:220px; max-width:100%; height:auto; border-radius:10px; border:1px solid var(--border); display:block">
+      </div>
+      <label class="reg-field">
+        <span>Upload Payment Screenshot</span>
+        <input type="file" name="paymentScreenshot" accept="image/*" required>
+      </label>
+      <button type="submit" class="btn bm" id="reg-submit">Submit Registration</button>
+      <p id="reg-status" class="reg-status" aria-live="polite"></p>
+    </form>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:1.2rem; margin-top:1.5rem">
+      <a href="https://chat.whatsapp.com/Hbq74sCWK0W3TTt8L43u6s?mode=gi_t" target="_blank" rel="noopener noreferrer" class="btn bo" style="border-color:#25D366; color:#25D366; display:flex; align-items:center; gap:0.6rem">
+        <i class="ph ph-whatsapp-logo" style="font-size:1.2rem"></i> JOIN WHATSAPP
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEE -->
+<section id="committee">
+  <h2 class="stitle rv">Organizing Committee</h2>
+  <p class="ssub rv">The Minds Behind the Mission</p>
+  <div class="com-grid">
+    <div class="com-card rv d1"><span class="com-label">Conveners</span><p class="com-name">Mr. G. Sekar<br>Ms. S. Swetha</p><div class="dv"></div><span class="com-label">Event Coordination</span><p class="com-name">Ms. V. Thamaraiselvi</p></div>
+    <div class="com-card rv d2"><span class="com-label">Registration</span><p class="com-name">Ms. A. Jayanthi<br>Ms. D. Teena</p><div class="dv"></div><span class="com-label">Editorial</span><p class="com-name">Mr. G. Srinivasan</p></div>
+    <div class="com-card rv d3"><span class="com-label">Session Management</span><p class="com-name">Mr. K. Chairmadurai<br>Ms. T. M. Padmapriya</p></div>
+    <div class="com-card rv d1"><span class="com-label">Design</span><p class="com-name">Ms. P. Gajalakshmi<br>Ms. S. Sangavi</p><div class="dv"></div><span class="com-label">Food &amp; Media</span><p class="com-name">Dr. R. Srivel<br>Mr. G. Srinivasan</p></div>
+    <div class="com-card rv d2"><span class="com-label">Executive</span><p class="com-name">Ms. R. Swathy<br>Ms. V. Sumithra</p><div class="dv"></div><span class="com-label">Public Addressing</span><p class="com-name">Ms. S. Subashini<br>Mr. S. Hariganesan</p></div>
+    <div class="com-card rv d3"><span class="com-label">Treasurer</span><p class="com-name">Mr. G. Sekar</p></div>
+  </div>
+</section>
+
+<!-- STUDENT COMMITTEE -->
+<section id="student-committee">
+  <h2 class="stitle rv">Student Committee</h2>
+  <p class="ssub rv">The Driving Force</p>
+  <div class="tm-grid">
+    <div class="tm-card rv d1"><div class="tm-av">EV</div><p class="tm-role">Vice President</p><h3 class="tm-name">Ellakiya V</h3><p class="tm-ph">+91 99407 64517</p><div class="tm-act"><a href="tel:9940764517" class="ac">Call</a><a href="https://wa.me/919940764517" target="_blank" rel="noopener noreferrer" class="aw">WhatsApp</a></div></div>
+    <div class="tm-card rv d2"><div class="tm-av">SV</div><p class="tm-role">Secretary</p><h3 class="tm-name">Sachin V</h3><p class="tm-ph">+91 99407 64517</p><div class="tm-act"><a href="tel:9940764517" class="ac">Call</a><a href="https://wa.me/919940764517" target="_blank" rel="noopener noreferrer" class="aw">WhatsApp</a></div></div>
+    <div class="tm-card rv d1"><div class="tm-av">GP</div><p class="tm-role">Technical Head</p><h3 class="tm-name">Gokulkumar P</h3><p class="tm-ph">+91 93631 35589</p><div class="tm-act"><a href="tel:9363135589" class="ac">Call</a><a href="https://wa.me/919363135589" target="_blank" rel="noopener noreferrer" class="aw">WhatsApp</a></div></div>
+    <div class="tm-card rv d2"><div class="tm-av">MDK</div><p class="tm-role">Non-Tech Head &amp; Joint Secretary</p><h3 class="tm-name">M Dinesh Karthick</h3><p class="tm-ph">+91 91501 54087</p><div class="tm-act"><a href="tel:9150154087" class="ac">Call</a><a href="https://wa.me/919150154087" target="_blank" rel="noopener noreferrer" class="aw">WhatsApp</a></div></div>
+    <div class="tm-card rv d1"><div class="tm-av">II</div><p class="tm-role">Treasurer</p><h3 class="tm-name" style="margin-bottom: 2rem;">I. Inual Irfaya</h3></div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" style="min-height:auto;padding:80px clamp(5%,8vw,10%)">
+  <h2 class="stitle rv">Leadership</h2>
+  <p class="ssub rv">Guided by Excellence</p>
+  <div class="lead-card rv">
+    <div class="lead-av">CD</div>
+    <div class="lead-info">
+      <span class="lead-role">Head of Department</span>
+      <h3>Dr.C.Dhaya</h3>
+      <p class="lead-pos">Department of Computer Science Engineering<br>APEC, Melmaruvathur</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="ft-inner">
+    <div>
+      <h2 class="ft-title outfit rv">GET IN <span>TOUCH</span></h2>
+      <p class="ft-sub rv">Have questions about the symposium? Our team is here to help.</p>
+      <span class="ft-section-label rv">Follow Us Online</span>
+      <div class="ft-soc rv">
+        <a href="https://www.instagram.com/namma_cse" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="ph ph-instagram-logo"></i></a>
+        <a href="https://youtube.com/@cse_pixelora" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="ph ph-youtube-logo"></i></a>
+        <a href="mailto:csepixelora@gmail.com" title="Email"><i class="ph ph-envelope-simple"></i></a>
+      </div>
+    </div>
+    <div>
+      <span class="ft-section-label rv">Location</span>
+      <div class="ft-loc-box rv">
+        <div class="ft-loc-icon"><i class="ph ph-map-pin"></i></div>
+        <div class="ft-loc-text">
+          <p>Main Block, Adhiparasakthi Engineering College,<br>Melmaruvathur &ndash; 603319, Tamil Nadu.</p>
+        </div>
+      </div>
+      <span class="ft-section-label rv">Email</span>
+      <div class="ft-loc-box rv">
+        <div class="ft-loc-icon"><i class="ph ph-envelope-simple"></i></div>
+        <div class="ft-loc-text">
+          <p>csepixelora@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>&copy; 2026 PIXELORA. All Rights Reserved.</p>
+    <p class="credit">Designed &amp; Developed by <span>SACHIN V</span></p>
+  </div>
+</footer>
+
+<!-- Master-Level Polish Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
